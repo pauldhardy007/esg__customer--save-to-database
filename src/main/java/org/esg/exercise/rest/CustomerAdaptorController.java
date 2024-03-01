@@ -3,6 +3,7 @@ package org.esg.exercise.rest;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.esg.exercise.dto.CustomerDto;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/customers")
@@ -31,8 +32,9 @@ public class CustomerAdaptorController {
             @ApiResponse(responseCode = "500", description = "Internal Server Error", content = @Content(mediaType = "application/json",
                     schema = @Schema(implementation = ErrorResponse.class)))})*/
     @GetMapping(value = "/{accountNumber}/contacts"/*, produces = APPLICATION_JSON_VALUE*/)
-    public void getCustomerContactDetail(@PathVariable final String accountNumber) {
+    public ResponseBody<CustomerDto> getCustomerContactDetail(@PathVariable final String accountNumber) {
         System.out.println("HERE!!" + accountNumber);
+        return
     }
 
 }
