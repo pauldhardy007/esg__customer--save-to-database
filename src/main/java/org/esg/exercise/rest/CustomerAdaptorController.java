@@ -1,4 +1,4 @@
-package org.winharleigh.exercise.rest;
+package org.esg.exercise.rest;
 
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;

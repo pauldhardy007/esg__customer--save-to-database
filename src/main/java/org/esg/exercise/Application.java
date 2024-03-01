@@ -1,4 +1,4 @@
-package org.winharleigh.exercise;
+package org.esg.exercise;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
