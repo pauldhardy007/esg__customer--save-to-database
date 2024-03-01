@@ -30,7 +30,7 @@ public class CustomerAdaptorController {
                     schema = @Schema(implementation = ErrorResponse.class))),
             @ApiResponse(responseCode = "500", description = "Internal Server Error", content = @Content(mediaType = "application/json",
                     schema = @Schema(implementation = ErrorResponse.class)))})*/
-    @GetMapping(value = "/contacts/{accountNumber}"/*, produces = APPLICATION_JSON_VALUE*/)
+    @GetMapping(value = "/{accountNumber}/contacts"/*, produces = APPLICATION_JSON_VALUE*/)
     public void getCustomerContactDetail(@PathVariable final String accountNumber) {
         System.out.println("HERE!!" + accountNumber);
     }
