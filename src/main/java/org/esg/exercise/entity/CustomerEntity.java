@@ -4,10 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -16,18 +16,19 @@ import javax.persistence.Table;
 @Builder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class Customer {
+public class CustomerEntity {
 
-    @Column(name = "customer-ref")
+    @Id
+    @Column(name = "customer_ref")
     private String customerRef;
 
-    @Column(name = "customer-name")
+    @Column(name = "customer_name")
     private String customerName;
 
-    @Column(name = "address-line-one")
+    @Column(name = "address_line_one")
     private String addressLineOne;
 
-    @Column(name = "address-line-two")
+    @Column(name = "address_line_two")
     private String addressLineTwo;
 
     @Column(name = "town")

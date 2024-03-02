@@ -4,13 +4,18 @@ import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.esg.exercise.dto.CustomerDto;
+import org.esg.exercise.service.GetFromDatabase;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import static org.springframework.http.ResponseEntity.ok;
 
 @RequestMapping("/customers")
 @RestController
 @RequiredArgsConstructor
 @Slf4j
 public class CustomerAdaptorController {
+    private GetFromDatabase getFromDatabase;
 
     @Operation(summary = "Save Customer Contact Detail to DB")
     /*@ApiResponses(value = {
@@ -32,9 +37,8 @@ public class CustomerAdaptorController {
             @ApiResponse(responseCode = "500", description = "Internal Server Error", content = @Content(mediaType = "application/json",
                     schema = @Schema(implementation = ErrorResponse.class)))})*/
     @GetMapping(value = "/{accountNumber}/contacts"/*, produces = APPLICATION_JSON_VALUE*/)
-    public ResponseBody<CustomerDto> getCustomerContactDetail(@PathVariable final String accountNumber) {
+    public ResponseEntity<CustomerDto> getCustomerContactDetail(@PathVariable final String accountNumber) {
         System.out.println("HERE!!" + accountNumber);
-        return
+        return ok(getFromDatabase.getCustomerData(accountNumber));
     }
-
 }
