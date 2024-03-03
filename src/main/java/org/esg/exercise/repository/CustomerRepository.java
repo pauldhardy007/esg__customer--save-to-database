@@ -7,6 +7,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "customer", path = "customer")
-public interface CustomerRepository extends JpaRepository<CustomerEntity, String> {
-    List<CustomerEntity> findByCustomerRef(String customerRef);
+public interface CustomerRepository extends JpaRepository<CustomerEntity, Long> {
+    List<CustomerEntity> findByCustomerRef(long customerRef);
 }

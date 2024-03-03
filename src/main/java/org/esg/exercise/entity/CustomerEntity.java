@@ -5,10 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name="customer")
@@ -19,8 +21,8 @@ import javax.persistence.Table;
 public class CustomerEntity {
 
     @Id
-    @Column(name = "customer_ref")
-    private String customerRef;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long customerRef;
 
     @Column(name = "customer_name")
     private String customerName;

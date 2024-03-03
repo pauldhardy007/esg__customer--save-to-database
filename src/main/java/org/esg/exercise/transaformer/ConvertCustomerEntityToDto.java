@@ -5,12 +5,12 @@ import org.esg.exercise.entity.CustomerEntity;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ConvertCustomerEntity {
+public class ConvertCustomerEntityToDto {
 
     public CustomerDto transform(CustomerEntity customerEntity) {
         return CustomerDto.builder()
-                .customerRef(customerEntity
-                        .getCustomerRef())
+                .customerRef(String.valueOf(customerEntity
+                        .getCustomerRef()))
                 .customerName(customerEntity.getCustomerName())
                 .addressLineOne(customerEntity.getAddressLineOne())
                 .addressLineTwo(customerEntity.getAddressLineTwo())
