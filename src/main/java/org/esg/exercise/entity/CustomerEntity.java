@@ -18,7 +18,6 @@ import lombok.NoArgsConstructor;
 public class CustomerEntity {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long customerRef;
 
     @Column(name = "customer_name")
