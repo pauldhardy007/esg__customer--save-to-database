@@ -11,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.http.ResponseEntity.ok;
 
 @RequestMapping("/customers")
@@ -46,7 +45,7 @@ public class CustomerAdaptorController {
             @ApiResponse(responseCode = "500", description = "Internal Server Error", content = @Content(mediaType =
             "application/json",
                     schema = @Schema(implementation = ErrorResponse.class)))})*/
-    @GetMapping(value = "/{accountNumber}/contacts", produces = APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/{customerRef}/contacts")
     public ResponseEntity<CustomerDto> getCustomerContactDetail(@PathVariable final long customerRef) {
         log.info("Getting Customer Contact Detail. customerRef [{}]", customerRef);
         try {
