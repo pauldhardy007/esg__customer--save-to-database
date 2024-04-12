@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.winharleigh.exercise</groupId>
-    <artifactId>customer__contact--save-to-database</artifactId>
+    <artifactId>esg__customer--save-to-database</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <parent>
